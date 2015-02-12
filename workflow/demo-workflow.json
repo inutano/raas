@@ -6,8 +6,9 @@
     { "id": "sratoolkit",
       "type": "DOCKER",
       "image": "inutano/sra-toolkit:latest",
+      "volume": "/path/to/data_dir"
       "command": "fastq-dump",
-      "arguments": "--split-3",
+      "arguments": "--split-3 ERR336130.sra",
       "allocatedResources": {
         "cpu": 1,
         "mem": 5000,
@@ -19,8 +20,9 @@
     { "id": "fastqc",
       "type": "DOCKER",
       "image": "inutano/fastqc:latest",
+      "volume": "/path/to/data_dir"
       "command": "fastqc",
-      "arguments": "--thread 4",
+      "arguments": "--thread 4 ERR336130.fastq",
       "allocatedResources": {
         "cpu": 2,
         "mem": 10000,
