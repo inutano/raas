@@ -1,33 +1,33 @@
 {
-	"user": "inutano",
-	"project": "myProject01",
-	"workflow": "myProject01-workflow01",
-	"SubProcess": [
-		{ "id": "sratoolkit",
-		  "type": "DOCKER",
-		  "image": "inutano/sra-toolkit:latest",
-		  "command": "fastq-dump",
-		  "arguments": "--split-3",
-		  "allocatedResources": {
-		  	"cpu": 1,
-		   	"mem": 5000,
-		   	"ports": [],
-		   	"diskSpace": "",
-		   	"network": ""
-		  }
-   	},
-		{ "id": "fastqc",
-		  "type": "docker",
-		  "image": "inutano/fastqc:latest",
-		  "command": "fastqc",
-		  "arguments": "--thread 4",
-		  "allocatedResources": {
-		   	"cpu": 1,
-		   	"mem": 5000,
-		   	"ports": [],
-		   	"diskSpace": "",
-		   	"network": ""		    	
-		   }
-		},
-	]
+  "user": "inutano",
+  "project": "myProject01",
+  "workflow": "myProject01-workflow01",
+  "SubProcess": [
+    { "id": "sratoolkit",
+      "type": "DOCKER",
+      "image": "inutano/sra-toolkit:latest",
+      "command": "fastq-dump",
+      "arguments": "--split-3",
+      "allocatedResources": {
+        "cpu": 1,
+        "mem": 5000,
+        "ports": [],
+        "diskSpace": "",
+        "network": ""
+      }
+    },
+    { "id": "fastqc",
+      "type": "DOCKER",
+      "image": "inutano/fastqc:latest",
+      "command": "fastqc",
+      "arguments": "--thread 4",
+      "allocatedResources": {
+        "cpu": 2,
+        "mem": 10000,
+        "ports": [],
+        "diskSpace": "",
+        "network": ""
+       }
+    },
+  ]
 }
